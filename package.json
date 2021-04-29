@@ -1,0 +1,27 @@
+{
+  "name": "scraper_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "class.js",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.6",
+    "cron": "^1.8.2",
+    "nodemailer": "^6.6.0",
+    "puppeteer": "^9.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node class.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krishvi1011/Scraper_Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krishvi1011/Scraper_Project/issues"
+  },
+  "homepage": "https://github.com/krishvi1011/Scraper_Project#readme"
+}
