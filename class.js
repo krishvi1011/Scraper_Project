@@ -29,7 +29,6 @@ async function main() {
 
     let page = await browser.newPage();
     await page.goto(url);
-    await delay(10000);
     await page.waitForSelector('#add-to-cart-button', { visible: true });
     await page.click('#add-to-cart-button');
 
@@ -44,19 +43,19 @@ async function main() {
     await page.click('#add-to-cart-button', { clickCount: 1 });
     await delay(5000);
     if (priceEl < 40000) {
-      await whatsapp();
+      await whatsapp(browser);
     }
   } catch (err) {
     console.log(err);
   }
 }
 
-async function whatsapp() {
+async function whatsapp(browser) {
   try {
     let page = await browser.newPage();
-    await page.setDefaultNavigationTimeout(0);
+    await delay(1000);
     await page.goto('https://web.whatsapp.com/');
-    await page.waitForTimeout(10000);
+    await delay(10000);
     await page.waitForSelector('._2_1wd.copyable-text.selectable-text', {
       visible: true,
     });
@@ -64,7 +63,10 @@ async function whatsapp() {
     await page.keyboard.press('Enter');
     await page.waitForSelector('._1JAUF._2x4bz .OTBsx', { visible: true });
     let newMessage = 'Price dropped.Buy now soon';
-    await page.type(newMessage);
+    await page.type(
+      '._1JAUF._2x4bz ._2_1wd.copyable-text.selectable-text',
+      newMessage
+    );
     await page.keyboard.press('Enter');
   } catch (error) {
     console.log(error);
