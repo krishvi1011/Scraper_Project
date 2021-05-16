@@ -62,7 +62,7 @@ async function whatsapp(browser) {
     await page.type('._2_1wd.copyable-text.selectable-text', 'manpreet');
     await page.keyboard.press('Enter');
     await page.waitForSelector('._1JAUF._2x4bz .OTBsx', { visible: true });
-    let newMessage = 'Price dropped.Buy now soon';
+    let newMessage = 'Price dropped. Buy now soon';
     await page.type(
       '._1JAUF._2x4bz ._2_1wd.copyable-text.selectable-text',
       newMessage
